@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/labelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_note"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:layout_marginBottom="5dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/labelSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelTitle"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/subtitle_note"
+            android:textColor="@color/gray" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_toLeftOf="@id/labelTitle"
+            android:background="@drawable/button"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/label_button_create_note"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/white"
+            android:minHeight="35dp"/>
+
+        <TextView
+            android:id="@+id/emptyMessage"
+            android:layout_below="@id/labelSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/message_no_data"
+            android:textColor="@color/red_light"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/listNote"
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:listSelector="@drawable/list_selector" >
+    </ListView>
+
+
+    <LinearLayout
+        android:id="@+id/loadingScreen"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#DD000000"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/loadingIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description_general"
+            app:srcCompat="@drawable/loading0001" />
+    </LinearLayout>
+</RelativeLayout>
